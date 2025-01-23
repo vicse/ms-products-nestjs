@@ -30,7 +30,8 @@ export class ProductsService {
     id: number,
     updateProductDto: UpdateProductDto,
   ): Promise<Product> {
-    return this.productsRepository.update(id, updateProductDto);
+    const { id: _, ...rest } = updateProductDto;
+    return this.productsRepository.update(id, rest);
   }
 
   async remove(id: number): Promise<Product> {
