@@ -69,4 +69,15 @@ export class ProductsRepository {
       },
     });
   }
+
+  async validateProducts(ids: number[]): Promise<Product[]> {
+    return this.prisma.product.findMany({
+      where: {
+        available: true,
+        id: {
+          in: ids,
+        },
+      },
+    });
+  }
 }
