@@ -1,10 +1,10 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma.service';
 import { Prisma, Product } from '@prisma/client';
 import { PaginationDto } from '../common/dto';
 import { PaginationResponse } from '../common/interfaces/pagination-response';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { RpcException } from '@nestjs/microservices';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class ProductsRepository {
